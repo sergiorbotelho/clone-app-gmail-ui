@@ -1,7 +1,9 @@
+import { View } from "react-native";
+
 import { Avatar } from "@/components/avatar";
+import { Email } from "@/components/email";
 import { Input } from "@/components/input";
 import { MenuButton } from "@/components/menu-button";
-import { Text, View } from "react-native";
 
 export default function Home() {
   return (
@@ -14,6 +16,7 @@ export default function Home() {
           size="small"
         />
       </Input>
+      <Email />
     </View>
   );
 }
