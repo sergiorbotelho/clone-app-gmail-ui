@@ -7,7 +7,7 @@ interface InputProps {
 }
 function Input({ children }: InputProps) {
   return (
-    <View className="w-full h-14 bg-gray800 rounded-lg p-4 flex-row items-center gap-4">
+    <View className="w-full h-14 bg-gray-800 rounded-lg p-4 flex-row items-center gap-4">
       {children}
     </View>
   );
