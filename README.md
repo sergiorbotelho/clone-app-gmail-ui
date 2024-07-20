@@ -1,3 +1,7 @@
+
+ ![Captura de tela 2024-07-20 121100](https://github.com/user-attachments/assets/60bbdc89-97c5-4042-99e8-4303cb7a867b)      ![Captura de tela 2024-07-20 121137](https://github.com/user-attachments/assets/61cd96c6-b6fb-46a8-aff9-14f9f297e65c)
+
+
 # Clone App Gmail UI 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
