@@ -1,13 +1,15 @@
-import { Text, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
 import { Avatar } from "./avatar";
 import { MaterialIcons } from "@expo/vector-icons";
 import { colors } from "@/styles/colors";
 import { EmailDataProps } from "@/utils/emails";
+import { useState } from "react";
 
 type EmailProps = {
   data: EmailDataProps;
 };
 export function Email({ data }: EmailProps) {
+  const [star, setStar] = useState(false);
   return (
     <View className="w-full flex-row gap-4">
       <Avatar source={{ uri: data.avatar }} />
@@ -41,11 +43,13 @@ export function Email({ data }: EmailProps) {
           >
             {data.message}
           </Text>
-          <MaterialIcons
-            name={data.start ? "star" : "star-outline"}
-            size={22}
-            color={data.start ? colors.yellow[600] : colors.blue[600]}
-          />
+          <Pressable onPress={() => setStar(!star)}>
+            <MaterialIcons
+              name={star ? "star" : "star-outline"}
+              size={22}
+              color={star ? colors.yellow[600] : colors.blue[600]}
+            />
+          </Pressable>
         </View>
       </View>
     </View>
