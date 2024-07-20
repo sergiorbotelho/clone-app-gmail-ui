@@ -29,6 +29,7 @@ export function DrawerButton({
       <View
         className={clsx("flex-row items-center gap-4 h-14 px-6 -ml-2 w-full", {
           "-ml-14": isDivider,
+          "bg-orange-800 rounded-r-full": isFocused,
         })}
       >
         <MaterialIcons
