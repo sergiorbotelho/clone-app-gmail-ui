@@ -1,5 +1,5 @@
 import { DrawerContentComponentProps } from "@react-navigation/drawer";
-import { Image, ScrollView, View } from "react-native";
+import { Image, ScrollView, Text, View } from "react-native";
 import { DrawerButton } from "@/components/drawer-button";
 import { CustomOptions } from "@/types/navigation";
 
@@ -26,14 +26,31 @@ export function DrawerContent(drawerProps: DrawerContentComponentProps) {
             if (options.title === undefined) {
               return;
             }
+            const onPress = () => {
+              const event = drawerProps.navigation.emit({
+                type: "drawerItemPress",
+                canPreventDefault: true,
+                target: route.key,
+              });
+
+              if (!isFocused && !event.defaultPrevented) {
+                drawerProps.navigation.navigate(route.name, route.params);
+              }
+            };
 
             return (
-              <View key={route.key}>
+              <View key={route.key} className="w-full">
+                {options.sectionTitle && (
+                  <Text className="text-gray-400 text-sm font-heading uppercase ml-4 mt-6">
+                    {options.sectionTitle}
+                  </Text>
+                )}
                 <DrawerButton
                   title={options.title}
                   iconName={options.iconsName}
                   isDivider={options.isDivider}
                   isFocused={isFocused}
+                  onPress={onPress}
                 />
               </View>
             );
